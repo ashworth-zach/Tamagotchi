@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h3 class="text-center">Fullness:@ViewBag.pal.fullness  |  Happiness:@ViewBag.pal.happiness  |  Meals:@ViewBag.pal.meals  |  Energy:@ViewBag.pal.energy </h3>
+    <div class="container text-center">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <h4 class="message">@ViewBag.pal.status</h4>
+    </div>
+    @if(ViewBag.pal.status == "your pal is dead"){
+        <div class="container text-center">
+        <form id="restart" action="restart" method="post">
+            <input type="submit" name="restart" value="restart" class="btn btn-primary text-center">
+        </form>
+        </div>
+        <script>
+        $("document").ready(function(){
+					$(".formdiv").hide();
+				});
+        </script>
+    }
+    <div class="container text-center formdiv">
+        <form  action="action" method="post" class="col-md-3 text-center">
+            <input id="Action" type="submit" name="action" value="Feed" class="btn btn-primary">
+        </form>
+        <form  action="action" method="post" class="col-md-3 text-center">
+            <input id="Action" type="submit" name="action" value="Sleep" class="btn btn-primary">
+        </form>
+        <form  action="action" method="post" class="col-md-3 text-center">
+            <input id="Action" type="submit" name="action" value="Work" class="btn btn-primary">
+        </form>
+        <form  action="action" method="post" class="col-md-3 text-center">
+            <input id="Action" type="submit" name="action" value="Play" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+
+</html>
